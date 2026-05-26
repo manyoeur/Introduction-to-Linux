@@ -117,28 +117,40 @@ localhost
 ### 2.5 Step 5
 
 The pwd command is used to display your current "location" or current "working" directory. Type the following command to display the working directory:
+```
 pwd
+```
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ pwd                                            
 /home/sysadmin                                                       
 sysadmin@localhost:~$
+```
+
 The current directory in the example above is /home/sysadmin. This is also referred to as your home directory, a special place where you have control of files and other users normally have no access. By default, this directory is named the same as your username and is located underneath the /home directory.
 As you can see from the output of the command, /home/sysadmin, Linux uses the forward slash / to separate directories to make what is called a path. The initial forward slash represents the top-level directory, known as the root directory. More information regarding files, directories and paths will be presented in later labs.
 The tilde ~ character that you see in your prompt is also indicating what the current directory is. This character is a "shortcut" way to represent your home.
 Consider This
 pwd stands for "print working directory". While it doesn't actually "print" in modern versions, older UNIX machines didn't have monitors so the output of commands went to a printer, hence the somewhat misleading name of pwd.
-5.3 Command History
+
+## 5.3 Command History
+
 The Bash shell maintains a history of the commands that you type. Previous commands can be easily accessed in this history in several ways.
 The first and easiest way to recall a previous command is to use the up arrow key. Each press of the up arrow key goes backwards one command through your command history. If you accidentally go back too far, then the down arrow key will go forwards through the history of commands.
 When you find the command that you want to execute, you can use the left arrow keys and right arrow keys to position the cursor for editing. Other useful keys for editing include the Home, End, Backspace and Delete keys.
 Another way to use your command history is to execute the history command to be able to view a numbered history list. The number listed to the left of the command can be used to execute the command again. The history command also has a number of options and arguments which can manipulate which commands will be stored or displayed.
-5.3.1 Step 1
+### 3.1 Step 1
 Execute a new command and then execute the history command:
+```
 echo Hi
 history
+```
+
 Remember
+
 The date command will print the time and date on the system. The clear command clears the screen.
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ history                                                   
     1  ls                                                                       
     2  ls -l                                                                    
@@ -151,23 +163,33 @@ sysadmin@localhost:~$ history
     9  echo Hi                                                                  
    10  history                                                                  
 sysadmin@localhost:~$
+```
+
 Your command numbers may differ from those provided above. This is because you may have executed a different number of commands since opening the virtual terminal.
-5.3.2 Step 2
+
+### 5.3.2 Step 2
+
 To view a limited number of commands, the history command can take a number as a parameter to display exactly that many recent entries. Type the following command to display the last five commands from your history:
 history 5
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ history 5                                                 
     7  uname --nodename                                                         
     8  pwd                                                                      
     9  echo Hi                                                                  
    10  history                                                                  
    11  history 5
-5.3.3 Step 3
+```
+### 3.3 Step 3
+
 To execute a command again, type the exclamation point and the history list number. For example, to execute the 9th command in your history list, you would execute the following:
+```
 !9
 sysadmin@localhost:~$ !9                                                        
 echo Hi                                                                         
 Hi
+```
+
 5.3.4 Step 4
 Next, experiment with accessing your history using the up arrow keys and down arrow keys. Keep pressing the up arrow key until you find a command you want to execute. If necessary, use other keys to edit the command and then press Enter to execute the command.
 5.4 Shell Variables
