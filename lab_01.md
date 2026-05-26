@@ -312,52 +312,71 @@ To understand single and double quotes, consider that there are times that you d
 •	Back ` quotes cause command substitution which allows for a command to be executed within the line of another command.
 When using quotes, they must be entered in pairs or else the shell will not consider the command complete.
 While single quotes are useful for blocking the shell from interpreting one or more characters, the shell also provides a way to block the interpretation of just a single character called "escaping" the character. To escape the special meaning of a shell metacharacter, the backslash \ character is used as a prefix to that one character.
-5.6.1 Step 1
+### 6.1 Step 1
 Execute the following command which uses back quotes ` (found under the ~ character on some keyboards) to execute the date command within the line of the echo command:
+```
 echo Today is `date`
+```
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ echo Today is `date`                               
 Today is Mon Feb 12 20:47:22 UTC 2024
-5.6.2 Step 2
+```
+### 6.2 Step 2
 You can also place $( before the command and ) after the command to accomplish command substitution:
+```
 echo Today is $(date)
 Your output should be similar to the following:
 sysadmin@localhost:~$ echo Today is $(date)                                     
 Today is Mon Feb 12 20:48:10 UTC 2024
+```
 Why two different methods that accomplish the same thing? Backquotes look very similar to single quotes, making it harder to "see" what a command is supposed to do. Originally, shells used backquotes; the $(command) format was added in a later version of the Bash shell to make the statement more visually clear.
-5.6.3 Step 3
+### 6.3 Step 3
 If you don't want the backquotes to be used to execute a command, place single quotes around them. Execute the following:
+```
 echo This is the command '`date`'
+```
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ echo This is the command '`date`'             
 This is the command `date`                                           
 sysadmin@localhost:~$
-5.6.4 Step 4
+```
+### 6.4 Step 4
 Note that you could also place a backslash \ character in front of each backquote character. Execute the following:
+```
 echo This is the command \`date\`
 Your output should be similar to the following:
 sysadmin@localhost:~$ echo This is the command \`date\`     
 This is the command `date`                                  
 sysadmin@localhost:~$
-5.6.5 Step 5
+```
+### 6.5 Step 5
 Double quote " characters don't have any effect on backquote characters. The shell will still use them as command substitution. Execute the following to see a demonstration:
+```
 echo This is the command "`date`"
 Your output should be similar to the following:
 sysadmin@localhost:~$ echo This is the command "`date`"               
 This is the command Mon Feb 12 20:51:10 UTC 2024
-5.6.6 Step 6
+```
+### 6.6 Step 6
 Double quote characters will have an effect on wildcard characters, disabling their special meaning. Execute the following:
+```
 echo D*
 echo "D*"
+```
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ echo D*                                        
 Desktop Documents Downloads                                          
 sysadmin@localhost:~$ echo "D*"                                      
 D*                                                                   
 sysadmin@localhost:~$
+```
 Important
+
 Quoting may seem trivial and weird at the moment, but as you gain more experience working in the command shell, you will discover that having a good understanding of how different quotes work is critical to using the shell.
-5.7 Control Statements
+## 5.7 Control Statements
 Typically, you type a single command and you execute it when you press Enter. The Bash shell offers three different statements that can be used to separate multiple commands typed together.
 The simplest separator is the semicolon (;). Using the semicolon between multiple commands allows for them to be executed one right after another, sequentially from left to right.
 The && characters create a logical "and" statement. Commands separated by && are conditionally executed. If the command on the left of the && is successful, then the command to the right of the && will also be executed. If the command to the left of the && fails, then the command to the right of the && is not executed.
