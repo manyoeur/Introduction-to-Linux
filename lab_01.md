@@ -190,69 +190,94 @@ echo Hi
 Hi
 ```
 
-5.3.4 Step 4
+### 3.4 Step 4
 Next, experiment with accessing your history using the up arrow keys and down arrow keys. Keep pressing the up arrow key until you find a command you want to execute. If necessary, use other keys to edit the command and then press Enter to execute the command.
-5.4 Shell Variables
+## 5.4 Shell Variables
 Shell variables are used to store data in Linux. This data is used by the shell itself as well as by programs and users.
 The focus of this section is to learn how to display the values of shell variables.
-5.4.1 Step 1
+### 4.1 Step 1
 The echo command can be used to print text and the value of a variable, and to show how the shell environment expands metacharacters (more on metacharacters later in this lab). Type the following command to have it output literal text:
+```
 echo Hello Student
 Your output should be similar to the following:
 sysadmin@localhost:~$ echo Hello Student                             
 Hello Student                                                        
 sysadmin@localhost:~$
-5.4.2 Step 2
+```
+### 4.2 Step 2
 Environment variables are available system-wide. The system automatically recreates environment variables when a new shell is opened. Examples include the PATH, HOME, and HISTSIZE variables. The HISTSIZE variable defines how many previous commands to store in the history list. In the example below, the command will display the value of the HISTSIZE variable:
+```
 sysadmin@localhost:~$ echo $HISTSIZE‌
 1000                                                           
 sysadmin@localhost:~$
-5.4.3 Step 3
+```
+### 4.3 Step 3
 Type the following command to display the value of the PATH variable:
+```
 echo $PATH
+```
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ echo $PATH                                    
 /home/sysadmin/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:
 /usr/games:/usr/local/games:/snap/bin                                                 
 sysadmin@localhost:~$
+```
 The PATH variable is displayed by placing a $ character in front of the name of the variable.
 This variable is used to find the location of commands. Each of the directories listed above are searched when you run a command. For example, if you try to run the date command, the shell will first look for the command in the /home/sysadmin/bin directory and then in the /usr/local/sbin directory and so on. Once the date command is found, the shell "runs it”.
-5.4.4 Step 4
+### 4.4 Step 4
 Use the which command to determine if there is an executable file, in this case named date, that is located within a directory listed in the PATH value:
+```
 which date
+```
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ which date                                    
 /bin/date                                                           
 sysadmin@localhost:~$
+```
 The output of the which command tells you that when you execute the date command, the system will run the command /bin/date. The which command makes use of the PATH variable to determine the location of the date command.
-5.5 Command Types
+## 5.5 Command Types
 In this section we will learn about the four types of commands used in Linux. Understanding where these commands come from and how they differ allows an administrator to manage the system more effectively.
-5.5.1 Step 1
+### 5.1 Step 1
 One way to learn more about a command is to look at where it comes from. The type command can be used to determine information about command type.
+```
 type command
+```
 There are several different sources of commands within the shell of your CLI:
 Internal commands are built into the shell itself. A good example is the cd (change directory) command as it is part of the Bash shell. When a user types the cd command, the Bash shell is already executing and knows how to interpret it, requiring no additional programs to be started.
 The type command identifies the cd command as an internal command:
+```
 sysadmin@localhost:~$ type cd                                     
 cd is a shell builtin
-5.5.2 Step 2
+```
+### 5.2 Step 2
 External commands are binary executables stored in directories that are searched by the shell. If a user types the ls command, the shell searches through the directories that are listed in the PATH variable to try to find a file named ls that it can execute. Use the which command to display the full path to the ls command.
+```
 which ls
 sysadmin@localhost:~$ which ls
 /bin/ls
+```
 For external commands, the type command displays the location of the command:
+```
 sysadmin@localhost:~$ type cp                                      
 cp is /bin/cp
+```
 In some cases the output of the type command may differ significantly from the output of the which command:
+```
 sysadmin@localhost:~$ which cp                                        
 /bin/cp
+```
 Using the -a option of the type command displays all locations that contain the command:
+```
 sysadmin@localhost:~$ type -a ls 
 ls is aliased to `ls --color=auto'
 ls is /bin/ls
-5.5.3 Step 3
+```
+### 5.3 Step 3
 Aliases can be used to map longer commands to shorter key sequences. When the shell sees an alias being executed, it substitutes the longer sequence before proceeding to interpret commands.
 To determine what aliases are set on the current shell, use the alias command:
+```
 sysadmin@localhost:~$ alias                                                     
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
  error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'                                                                            
@@ -263,8 +288,10 @@ alias l='ls -CF'
 alias la='ls -A'                                                                
 alias ll='ls -alF'                                                              
 alias ls='ls --color=auto'
-5.5.4 Step 4
+```
+### 5.4 Step 4
 The final command type is the executable program. These commands invoke programs installed on the system which perform specific tasks. When a user types the vi command, the shell uses the PATH file to locate and execute the program. Programs like vi are available on just about every Linux distribution; other programs, like vlc (an open source media player often used on Linux desktops), are installed by users or administrators for a specific purpose and will not be listed in the PATH unless they have been installed separately.
+```
 type vi
 cd /bin
 type vlc
@@ -276,7 +303,8 @@ sysadmin@localhost:/bin$ type vlc
 -bash: type: vlc: not found
 sysadmin@localhost:/bin$ cd
 sysadmin@localhost:~$
-5.6 Quoting
+```
+## 5.6 Quoting
 There are three types of quotes used by the Bash shell: single quotes ('), double quotes (") and back quotes (`). These quotes have special features in the Bash shell as described below.
 To understand single and double quotes, consider that there are times that you don't want the shell to treat some characters as special. For example, the * character is used as a wildcard. What if you wanted the * character to just mean a literal asterisk?
 •	Single ' quotes prevent the shell from "interpreting" or expanding all special characters. Often single quotes are used to protect a string (a sequence of characters) from being changed by the shell, so that the string can be interpreted by a command as a parameter to affect the way the command is executed.
