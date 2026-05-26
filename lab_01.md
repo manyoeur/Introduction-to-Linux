@@ -29,7 +29,8 @@ sysadmin@localhost:~$ ls
 ```
 
 Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
-###2.1 Step 1
+
+### 2.1 Step 1
 The ls command is used to list information about directories and files and by default it displays information for the current directory. Use the -l option to display this information in the long format, which gives additional information about files located in the current working directory:
 ```
 ls -l
@@ -51,7 +52,7 @@ drwxr-xr-x 2 sysadmin sysadmin 4096 Oct 31 19:52 Videos
 
 Note that directories are considered a type of file in the Linux file system.
 
-###2.2 Step 2
+### 2.2 Step 2
 
 Arguments can be added to commands as well. Adding the location of a specific directory to the ls command will list information for that directory. Use the argument /home to display detailed information about files in the /home directory.
 ```
@@ -66,32 +67,55 @@ drwxr-xr-x 1 sysadmin sysadmin 4096 Aug  8 17:46 sysadmin
 ```
 
 By using the -l option and the /home argument, we can now see that the /home directory has a directory called sysadmin located inside it.
-5.2.3 Step 3
+
+### 2.3 Step 3
 The following command will display the same information that you see in the first part of the prompt. Make sure that you have selected (clicked on) the Terminal window first and then type the following command followed by the Enter key:
+
+```
 whoami
+```
+
 Your output should be similar to the following:
+
+```
 sysadmin@localhost:~$ whoami                            
 sysadmin                                                
 sysadmin@localhost:~$
+```
+
 The output of the whoami command, sysadmin, displays the user name of the current user. Although in this case your username is displayed in the prompt, this command could be used to obtain this information in a situation when the prompt did not contain this information.
-5.2.4 Step 4
+
+### 2.4 Step 4
 The next command displays information about the current system. To be able to see the name of the kernel you are using, type the following command into the terminal:
 uname
 Your output should be similar to the following:
-sysadmin@localhost:~$ uname                             
+```
+sysadmin@localhost:~$ uname
+```
+                             
 Linux
+
 Many commands that are executed produce text output like this. You can change what output is produced by a command by using options after the name of the command.
 Options for a command can be specified in several ways. Traditionally in UNIX, options were expressed by a hyphen followed by another character; for example: -n.
 In Linux, options can sometimes also be given by two hyphen characters followed by a word, or hyphenated word; for example: --nodename.
 Execute the uname command again twice in the terminal, once with the option -n and again with the option --nodename. This will display the network node hostname, also found in the prompt.
+
+```
 uname -n
 uname --nodename
+```
+
 Your output should be similar to the following:
+
+```
 sysadmin@localhost:~$ uname -n                          
 localhost                                               
 sysadmin@localhost:~$ uname --nodename                  
 localhost
-5.2.5 Step 5
+```
+
+### 2.5 Step 5
+
 The pwd command is used to display your current "location" or current "working" directory. Type the following command to display the working directory:
 pwd
 Your output should be similar to the following:
