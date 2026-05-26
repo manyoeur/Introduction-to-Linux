@@ -6,7 +6,7 @@ In this lab, you will perform the following tasks:
 *•	Use shell variables
 *•	Be able to make use of quoting
 
-##2 Files and Directories
+## 2 Files and Directories
 In this task, we will access the Command Line Interface (CLI) for Linux to explore how to execute basic commands and what affects how they can be executed.
 Most users are probably more familiar with how commands are executed using a Graphical User Interface (GUI). Therefore, this task will likely present some new concepts to you if you have not previously worked with a CLI. To use a CLI, you will need to type the command that you want to run.
 The window where you will type your command is known as a terminal emulator application. Inside of the Terminal window the system is displaying a prompt, which currently contains a prompt followed by a blinking cursor:
@@ -15,6 +15,7 @@ sysadmin@localhost:~$
 ```
 
 Remember
+
 You may need to press Enter in the window to display the prompt.
 The prompt tells you that you are user sysadmin; the host or computer you are using: localhost; and the directory where you are at: ~, which represents your home directory.
 When you type a command, it will appear at the text cursor. You can use keys such as the home, end, backspace, and arrow keys for editing the command you are typing.
@@ -22,6 +23,7 @@ Equally important is the command line syntax, which is the order in which the co
 command [options] [arguments]
 Type the ls command at the prompt, which will list the files and directories contained in your current working directory. In this example, no options or arguments will be used.
 Once you have typed the command correctly, press Enter to execute it.
+
 ```
 sysadmin@localhost:~$ ls
 ```
