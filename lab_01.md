@@ -382,26 +382,31 @@ The simplest separator is the semicolon (;). Using the semicolon between multipl
 The && characters create a logical "and" statement. Commands separated by && are conditionally executed. If the command on the left of the && is successful, then the command to the right of the && will also be executed. If the command to the left of the && fails, then the command to the right of the && is not executed.
 The || characters create a logical "or" statement, which also causes conditional execution. When commands are separated by ||, then only if the command to the left fails, does the command to the right of the || execute. If the command to the left of the || succeeds, then the command to the right of the || will not execute.
 To see how these control statements work, you will be using two special executables: true and false. The true executable always succeeds when it executes, whereas, the false executable always fails. While this may not provide you with realistic examples of how && and || work, it does provide a means to demonstrate how they work without having to introduce new commands.
-5.7.1 Step 1
+### 5.7.1 Step 1
 Execute the following three commands together separated by semicolons:
 echo Hello; echo Linux; echo Student
 As you can see the output shows all three commands executed sequentially:
+```
 sysadmin@localhost:~$ echo Hello; echo Linux; echo Student           
 Hello                                                                
 Linux                                                              
 Student                                                             
 sysadmin@localhost:~$
-5.7.2 Step 2
+```
+### 5.7.2 Step 2
 Now, put three commands together separated by semicolons, where the first command executes with a failure result:
 false; echo Not; echo Conditional
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ false; echo Not; echo Conditional          
 Not                                                       
 Conditional                                              
 sysadmin@localhost:~$
+```
 Note that in the previous example, all three commands still executed even though the first one failed. While you can't see from the output of the false command, it did execute. However, when commands are separated by the ; character, they are completely independent of each other.
-5.7.3 Step 3
+### 5.7.3 Step 3
 Next, use logical "and" to separate the commands:
+```
 echo Start && echo Going && echo Gone
 Your output should be similar to the following:
 sysadmin@localhost:~$ echo Start && echo Going && echo Gone          
@@ -409,21 +414,28 @@ Start
 Going                                                                
 Gone                                                                 
 sysadmin@localhost:~$
+```
 Because each echo statement executes correctly, a return value of success is provided, allowing the next statement to also be executed.
-5.7.4 Step 4
+### 5.7.4 Step 4
 Use logical "and" with a command that fails as shown below:
+```
 echo Success && false && echo Bye
 Your output should be similar to the following:
 sysadmin@localhost:~$ echo Success && false && echo Bye              
 Success                                                              
 sysadmin@localhost:~$
+```
 The first echo command succeeds and we see its output. The false command executes with a failure result, so the last echo statement is not executed.
-5.7.5 Step 5
+### 5.7.5 Step 5
 The "or" characters separating the following commands demonstrates how the failure before the "or" statement causes the command after it to execute; however, a successful first statement causes the command to not execute:
+```
 false || echo Fail Or
 true || echo Nothing to see here
+```
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ false || echo Fail Or                         
 Fail Or                                                              
 sysadmin@localhost:~$ true || echo Nothing to see here                    
 sysadmin@localhost:~$
+```
