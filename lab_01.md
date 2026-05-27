@@ -309,9 +309,9 @@ There are three types of quotes used by the Bash shell: single quotes ('), doubl
 These quotes have special features in the Bash shell as described below.
 To understand single and double quotes, consider that there are times that you don't want the shell to treat some characters as special. For example, the * character is used as a wildcard. What if you wanted the * character to just mean a literal asterisk?
 
-* Single ' * quotes prevent the shell from "interpreting" or expanding all special characters. Often single quotes are used to protect a string (a sequence of characters) from being changed by the shell, so that the string can be interpreted by a command as a parameter to affect the way the command is executed.
-* Double " *  quotes stop the expansion of glob characters like the asterisk (*), question mark (?), and square brackets ( [] ).  Double  quotes do allow for both variable expansion and command substitution (see back quotes) to take place.
-* Back ` * quotes cause command substitution which allows for a command to be executed within the line of another command.
+* Single ' quotes prevent the shell from "interpreting" or expanding all special characters. Often single quotes are used to protect a string (a sequence of characters) from being changed by the shell, so that the string can be interpreted by a command as a parameter to affect the way the command is executed.
+* Double "  quotes stop the expansion of glob characters like the asterisk (*), question mark (?), and square brackets ( [] ).  Double  quotes do allow for both variable expansion and command substitution (see back quotes) to take place.
+* Back ` quotes cause command substitution which allows for a command to be executed within the line of another command.
 When using quotes, they must be entered in pairs or else the shell will not consider the command complete.
 While single quotes are useful for blocking the shell from interpreting one or more characters, the shell also provides a way to block the interpretation of just a single character called "escaping" the character. To escape the special meaning of a shell metacharacter, the backslash \ character is used as a prefix to that one character.
 
