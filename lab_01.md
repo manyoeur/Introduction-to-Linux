@@ -1,4 +1,4 @@
-# Lab 01
+# Lab 01 Linux command line skill
 ## 1 Introduction
 This is Lab 5: Command Line Skills. By performing this lab, students will learn how to use basic features of the shell.
 In this lab, you will perform the following tasks:
