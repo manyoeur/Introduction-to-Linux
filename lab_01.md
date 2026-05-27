@@ -2,9 +2,9 @@
 ## 1 Introduction
 This is Lab 5: Command Line Skills. By performing this lab, students will learn how to use basic features of the shell.
 In this lab, you will perform the following tasks:
-* •	Explore Bash features
-* •	Use shell variables
-* •	Be able to make use of quoting
+* Explore Bash features
+* Use shell variables
+* Be able to make use of quoting
 
 ## 2 Files and Directories
 In this task, we will access the Command Line Interface (CLI) for Linux to explore how to execute basic commands and what affects how they can be executed.
