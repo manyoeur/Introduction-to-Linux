@@ -14,7 +14,7 @@ The window where you will type your command is known as a terminal emulator appl
 sysadmin@localhost:~$
 ```
 
-Remember
+** Remember **
 
 You may need to press Enter in the window to display the prompt.
 The prompt tells you that you are user sysadmin; the host or computer you are using: localhost; and the directory where you are at: ~, which represents your home directory.
@@ -93,7 +93,7 @@ Your output should be similar to the following:
 sysadmin@localhost:~$ uname
 ```
                              
-Linux
+** Linux **
 
 Many commands that are executed produce text output like this. You can change what output is produced by a command by using options after the name of the command.
 Options for a command can be specified in several ways. Traditionally in UNIX, options were expressed by a hyphen followed by another character; for example: -n.
