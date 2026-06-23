@@ -47,7 +47,9 @@ Note that directories are considered a type of file in the Linux file system.
 Arguments can be added to commands as well. Adding the location of a specific directory to the ls command will list information for that directory. Use the argument /home to display detailed information about files in the /home directory.
 ```
 ls -l /home
+```
 Your output should be similar to the following:
+```
 sysadmin@localhost:~$ ls -l /home                                                
 total 4                                                                         
 drwxr-xr-x 1 sysadmin sysadmin 4096 Aug  8 17:46 sysadmin
