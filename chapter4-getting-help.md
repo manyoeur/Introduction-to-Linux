@@ -222,11 +222,14 @@ The different man pages are distinguished by "sections". By default there are ni
 *	Miscellaneous (including macro packages and conventions), e.g. man(7)>, groff(7)
 *	System administration commands (usually only for root)
 *	Kernel routines
+
 When you type a command such as ```man passwd```, the first section is searched and, if a match is found, the man page is displayed. The ```man -f passwd``` command that you previously executed shows that there is a section 1 man page for passwd: ```passwd (1)```. As a result, that is the one that is displayed by default.
 ### 4.2.10 Step 10
-To display a man page for a different section, provide the section number as the first argument to the man command. For example, execute the following command:
+To display a man page for a different section, provide the section number as the first argument to the ```man``` command. For example, execute the following command:
 ```
 man 5 passwd
+```
+```
 PASSWD(5)                File Formats and Conversions                PASSWD(5)  
                                                                               
 NAME                                                                          
@@ -249,10 +252,11 @@ DESCRIPTION
        o   user home directory                                                
                                                                               
        o   optional user command interpreter                                  
-                                                                                
+                                                                              
  Manual page passwd(5) line 1 (press h for help or q to quit)
-Type q to return to the system prompt.
 ```
+Type ```q``` to return to the system prompt.
+
 ### 4.2.11 Step 11
 Instead of using man -f to display all man page sections for a name, you can also use the whatis command:
 ```
