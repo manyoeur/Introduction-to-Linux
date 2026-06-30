@@ -258,7 +258,7 @@ DESCRIPTION
 Type ```q``` to return to the system prompt.
 
 ### 4.2.11 Step 11
-Instead of using man -f to display all man page sections for a name, you can also use the whatis command:
+Instead of using ```man -f``` to display all man page sections for a name, you can also use the ```whatis``` command:
 ```
 whatis passwd
 sysadmin@localhost:~$ whatis passwd                                           
@@ -268,11 +268,13 @@ passwd (1ssl)        - compute password hashes
 sysadmin@localhost:~$
 ```
 Note
-There is no difference between man -f and the whatis command.
+There is no difference between ```man -f``` and the ```whatis``` command.
 ### 4.2.12 Step 12
 Almost all system features (commands, system files, etc.) have man pages. Some of these features also have a more advanced feature called info pages. For example, execute the following command:
 ```
 info date
+```
+```
 File: coreutils.info,  Node: date invocation,  Next: arch invocation,  Up: Syst\
 em context                                                                      
                                                                               
@@ -300,13 +302,13 @@ Welcome to Info version 6.5.  Type H for help, h for tutorial.
 ```
 Many beginning Linux users find info pages to be easier to read. They are often written more like "lessons" while man pages are written purely as documentation.
 ### 4.2.13 Step 13
-While viewing the info page from the previous step, type Shift and the letter h to see a list of movement commands. Note that they are different from the movement commands used in man pages. After reading the movement commands, type the letter l (lowercase L) to return to viewing the document.
+While viewing the info page from the previous step, type Shift and the letter ```h``` to see a list of movement commands. Note that they are different from the movement commands used in man pages. After reading the movement commands, type the letter l (lowercase L) to return to viewing the document.
 ### 4.2.14 Step 14
-Use the movement commands to read the info page for the date command. When you are done, put your cursor anywhere on the line that reads *Examples of date:: and then press the Enter key. A new document will be displayed that shows examples of date.
+Use the movement commands to read the info page for the ```date``` command. When you are done, put your cursor anywhere on the line that reads *Examples of date:: and then press the Enter key. A new document will be displayed that shows examples of ```date```.
 ### 4.2.15 Step 15
-Type the l key to return to the previous screen. When you are finished reading, type q to exit the info page.
+Type the ```l``` key to return to the previous screen. When you are finished reading, type ```q``` to exit the info page.
 ### 4.2.16 Step 16
-Another way of getting help is by using the --help option to a command. Most commands allow you to pass an argument of --help to view basic command usage:
+Another way of getting help is by using the ```--help``` option to a command. Most commands allow you to pass an argument of ```--help``` to view basic command usage:
 
 ```date --help```
 ```
@@ -331,9 +333,11 @@ Display the current time in the given FORMAT, or set the system date.
       --version  output version information and exit
 ```
 ### 4.2.17 Step 17
-Some system features also have more detailed help documents located in the /usr/share/doc directory structure. Execute the following command to view the contents of this document:
+Some system features also have more detailed help documents located in the ```/usr/share/doc``` directory structure. Execute the following command to view the contents of this document:
 ```
 ls /usr/share/doc
+```
+```
 sysadmin@localhost:~$ ls /usr/share/doc                                       
 adduser              libdrm2               libx11-data                        
 apt                  libedit2              libxau6                            
@@ -359,7 +363,7 @@ Note that in almost all cases, the man pages and info pages will provide you wit
 ## 4.3 Finding Files
 In this task, we will explore how to search for a file on the system. This is useful to know in situations when you can't find a file on the system, either one that you created or one that was created by someone else.
 ### 4.3.1 Step 1
-An easy way to search for a file is to use the locate command. For example, you can find the location of the crontab file by executing the following command:
+An easy way to search for a file is to use the ```locate``` command. For example, you can find the location of the crontab file by executing the following command:
 ```locate crontab```
 ```
 sysadmin@localhost:~$ locate crontab                                          
@@ -380,9 +384,9 @@ sysadmin@localhost:~$ locate -b /etc/crontab
 /usr/share/bash-completion/completions/crontab                                                             
 sysadmin@localhost:~$
 ```
-Note: The locate command makes use of a database that is traditionally updated once per day (normally in the middle of the night). This database contains a list of all files that were on the system when the database was last updated.
-As a result, any files that you created today will not normally be searchable with the locate command. If you have access to the system as the root user (the system administrator account), you can manually update this file by running the updatedb command. Regular users cannot update the database file.
-Another possible solution to searching for "newer" files is to make use of the find command. This command searches the live filesystem, rather than a static database. The find command isn't part of the Linux Essentials objectives for this lab, so it is only mentioned here. Execute man find if you want to explore this command on your own.
+Note: The ```locate``` command makes use of a database that is traditionally updated once per day (normally in the middle of the night). This database contains a list of all files that were on the system when the database was last updated.
+As a result, any files that you created today will not normally be searchable with the ```locate``` command. If you have access to the system as the root user (the system administrator account), you can manually update this file by running the ```updatedb``` command. Regular users cannot update the database file.
+Another possible solution to searching for "newer" files is to make use of the ```find``` command. This command searches the live filesystem, rather than a static database. The ```find``` command isn't part of the Linux Essentials objectives for this lab, so it is only mentioned here. Execute ```man find``` if you want to explore this command on your own.
 ### 4.3.3 Step 3
 You may just want to find where a command (or its man pages) is located. This can be accomplished with the``` whereis``` command:
 ```
