@@ -9,14 +9,22 @@ In this task, you will explore the how to get help. This will be a very useful t
 In addition to Internet searches, the Linux Operating System provides a variety of techniques to learn more about a given command or feature. Knowing these different techniques will allow you to more easily and quickly find the answer you need.
 ### 4.2.1 Step 1
 Execute commands in the bash shell by typing the command and then pressing the Enter key. For example, type the following command to display today's date:
+```
 date
+``
 The output should be similar to the following:
+```
 sysadmin@localhost:~$ date                                                
 Mon Feb 12 20:57:34 UTC 2024
+```
 ### 4.2.2 Step 2
-To learn more about commands, access the manual page for the command with the man command. For example, execute the following command to learn more about the date command:
+To learn more about commands, access the manual page for the command with the ```man``` command. For example, execute the following command to learn more about the ```date``` command:
+```
 man date
+```
+```
 sysadmin@localhost:~$ man date
+```
 Your output should be similar to the following:
 ```
 DATE(1)                          User Commands                              DATE(1)  
@@ -311,3 +319,69 @@ Display the current time in the given FORMAT, or set the system date.
       --help     display this help and exit                                   
       --version  output version information and exit
 ```
+### 4.2.17 Step 17
+Some system features also have more detailed help documents located in the /usr/share/doc directory structure. Execute the following command to view the contents of this document:
+```
+ls /usr/share/doc
+sysadmin@localhost:~$ ls /usr/share/doc                                       
+adduser              libdrm2               libx11-data                        
+apt                  libedit2              libxau6                            
+ascii                libelf1               libxcb1                            
+base-files           libffi6               libxdmcp6                          
+base-passwd          libgcc1               libxext6                           
+bash                 libgcrypt11           libxml2                            
+bind9                libgdbm3              libxmuu1                           
+bind9-host           libgeoip1             locales                            
+bind9utils           libgettextpo0         login                              
+bsdmainutils         libglib2.0-0          logrotate                          
+bsdutils             libgnutls26           lsb-base                           
+busybox-initramfs    libgomp1              makedev                            
+bzip2                libgpg-error0         man-db                             
+ca-certificates      libgpm2               mawk                               
+coreutils            libgssapi-krb5-2      mc                                 
+cpio                 libgssapi3-heimdal    mc-data                            
+cron                 libhcrypto4-heimdal   mime-support                       
+curl                 libheimbase1-heimdal  mlocate                            
+dash                 libheimntlm0-heimdal  module-init-tools
+```
+Note that in almost all cases, the man pages and info pages will provide you with the information that you need. However, if you need more in-depth information (something that system administrators sometimes need), then you may find this information in the files located in the ```/usr/share/doc```
+## 4.3 Finding Files
+In this task, we will explore how to search for a file on the system. This is useful to know in situations when you can't find a file on the system, either one that you created or one that was created by someone else.
+### 4.3.1 Step 1
+An easy way to search for a file is to use the locate command. For example, you can find the location of the crontab file by executing the following command:
+```locate crontab```
+```
+sysadmin@localhost:~$ locate crontab                                          
+/etc/crontab                                                                    
+/usr/bin/crontab                                                                
+/usr/share/bash-completion/completions/crontab                                  
+/usr/share/doc/cron/examples/crontab2english.pl                                 
+/usr/share/man/man1/crontab.1.gz                                                
+/usr/share/man/man5/crontab.5.gz                                              
+sysadmin@localhost:~$
+```
+### 4.3.2 Step 2
+Note that the output from the previous example includes files that have crontab as part of their name. To find files that are just named crontab, use the following command:
+```locate -b "\crontab"```
+```
+sysadmin@localhost:~$ locate -b /etc/crontab                                                                    
+/usr/bin/crontab                                                                
+/usr/share/bash-completion/completions/crontab                                                             
+sysadmin@localhost:~$
+```
+Note: The locate command makes use of a database that is traditionally updated once per day (normally in the middle of the night). This database contains a list of all files that were on the system when the database was last updated.
+As a result, any files that you created today will not normally be searchable with the locate command. If you have access to the system as the root user (the system administrator account), you can manually update this file by running the updatedb command. Regular users cannot update the database file.
+Another possible solution to searching for "newer" files is to make use of the find command. This command searches the live filesystem, rather than a static database. The find command isn't part of the Linux Essentials objectives for this lab, so it is only mentioned here. Execute man find if you want to explore this command on your own.
+### 4.3.3 Step 3
+You may just want to find where a command (or its man pages) is located. This can be accomplished with the``` whereis``` command:
+```
+whereis passwd
+```
+```
+sysadmin@localhost:~$ whereis passwd 
+passwd: /usr/bin/passwd /etc/passwd /usr/share/man/man1/passwd.1.gz /usr/share/m
+an/man1/passwd.1ssl.gz /usr/share/man/man5/passwd.5.gz                       
+sysadmin@localhost:~$
+```
+The ```whereis``` command does not search for just any file, only for commands and man pages.
+Recall from earlier that there is more than one ```passwd``` man page on the system. This is why you see multiple file names and man pages (the files that end in ```.gz``` are man pages) when you execute the previous command.
