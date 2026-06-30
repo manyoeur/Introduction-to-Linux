@@ -310,7 +310,9 @@ Type the ```l``` key to return to the previous screen. When you are finished rea
 ### 4.2.16 Step 16
 Another way of getting help is by using the ```--help``` option to a command. Most commands allow you to pass an argument of ```--help``` to view basic command usage:
 
-```date --help```
+```
+date --help
+```
 ```
 sysadmin@localhost:~$ date --help                                             
 Usage: date [OPTION]... [+FORMAT]                                             
