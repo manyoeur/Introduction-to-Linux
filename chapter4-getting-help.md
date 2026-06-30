@@ -141,11 +141,13 @@ Notice that the text matching the search is highlighted. You can move forward to
 Manual page date(1) line 18/204 24% (press h for help or q to quit)
 ```
 ### 4.2.6 Step 6
-Use the movement commands previously described (such as using the spacebar to move down one screen) to read the man page for the date command. When you are finished reading, type q to exit the man page.
+Use the movement commands previously described (such as using the spacebar to move down one screen) to read the man page for the ```date``` command. When you are finished reading, type q to exit the man page.
 ### 4.2.7 Step 7
-In some cases you may not remember the exact name of the command. In these cases you can use the -k option to the man command and provide a keyword argument. For example, execute the following command to display a summary of all man pages that have the keyword "password" in the description:
+In some cases you may not remember the exact name of the command. In these cases you can use the ```-k``` option to the ```man``` command and provide a keyword argument. For example, execute the following command to display a summary of all man pages that have the keyword "password" in the description:
 ```
 man -k password
+```
+```
 sysadmin@localhost:~$ man -k password                                         
 chage (1)            - change user password expiry information                
 chgpasswd (8)        - update group passwords in batch mode                   
@@ -168,9 +170,9 @@ unix_update (8)      - Helper binary that updates the password of a given user
 vipw (8)             - edit the password, group, shadow-password or shadow-gr...
 sysadmin@localhost:~$
 ```
-The -k option to the man command will often produce a huge amount of output. We will cover a technique in a later lab to either limit this output or allow you to easily scroll through the data. For now, you can scroll using your mouse in the terminal window to move the display up and down as needed
+The ```-k``` option to the ```man``` command will often produce a huge amount of output. We will cover a technique in a later lab to either limit this output or allow you to easily scroll through the data. For now, you can scroll using your mouse in the terminal window to move the display up and down as needed
 ### 4.2.8 Step 8
-Note that the apropos command is another way of viewing man page summaries with a keyword. Type the following command:
+Note that the ```apropos``` command is another way of viewing man page summaries with a keyword. Type the following command:
 ```
 apropos password
 sysadmin@localhost:~$ apropos password                                        
@@ -196,11 +198,13 @@ vipw (8)             - edit the password, group, shadow-password or shadow-gr...
 sysadmin@localhost:~$
 ```
 Note
-There is no difference between man -k and the apropos command.
+There is no difference between ```man -k``` and the ```apropos``` command.
 ### 4.2.9 Step 9
 There are often multiple man pages with the same name. For example, the following command shows three pages for passwd. Execute the following command to view the man pages for the word passwd:
 ```
 man -f passwd
+```
+```
 sysadmin@localhost:~$ man -f passwd                                           
 passwd (5)           - the password file                                      
 passwd (1)           - change user password                                   
@@ -218,7 +222,7 @@ The different man pages are distinguished by "sections". By default there are ni
 *	Miscellaneous (including macro packages and conventions), e.g. man(7)>, groff(7)
 *	System administration commands (usually only for root)
 *	Kernel routines
-When you type a command such as man passwd, the first section is searched and, if a match is found, the man page is displayed. The man -f passwd command that you previously executed shows that there is a section 1 man page for passwd: passwd (1). As a result, that is the one that is displayed by default.
+When you type a command such as ```man passwd```, the first section is searched and, if a match is found, the man page is displayed. The ```man -f passwd``` command that you previously executed shows that there is a section 1 man page for passwd: ```passwd (1)```. As a result, that is the one that is displayed by default.
 ### 4.2.10 Step 10
 To display a man page for a different section, provide the section number as the first argument to the man command. For example, execute the following command:
 ```
