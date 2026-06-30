@@ -53,8 +53,8 @@ DESCRIPTION
 Manual page date(1) line 1 (press h for help or q to quit)
 ```
 Note
-Documents that are displayed with the man command are called "Man Pages".
-If the man command can find the manual page for the argument provided, then that manual page will be displayed using a command called less. The following table describes useful keys that can be used with the less command to control the output of the display:
+Documents that are displayed with the ```man``` command are called "Man Pages".
+If the ```man``` command can find the manual page for the argument provided, then that manual page will be displayed using a command called ```less```. The following table describes useful keys that can be used with the ```less``` command to control the output of the display:
 ```
 Key	Purpose
 H or h	Display the help
@@ -69,7 +69,7 @@ n	Move to next text that matches search
 N	Move to previous matching text
 ```
 ### 4.2.3 Step 3
-Type the letter h to see a list of movement commands. After reading the movement commands, type the letter q to get back to the document.
+Type the letter h to see a list of movement commands. After reading the movement commands, type the letter ```q``` to get back to the document.
 ```
                   SUMMARY OF LESS COMMANDS                                     
                                                
@@ -100,15 +100,18 @@ Note that the man pages might be a bit of a mystery to you now, but as you learn
 Searches are not case sensitive and do not "wrap" around from the bottom to top, or vice versa. Start a forward search for the word "file" by typing:
 ```
 /file
+```
 Note that what you are typing will appear at the bottom left portion of the screen.
+```
        -r, --reference=FILE                                                   
               display the last modification time of FILE                       
  
        -R, --rfc-2822                                                         
               output  date  and time in RFC 2822 format.  Example: Mon, 07 Aug
 /file
-Press Enter to search the document for the search string (file).
 ```
+Press Enter to search the document for the search string (file).
+
 ### 4.2.5 Step 5
 Notice that the text matching the search is highlighted. You can move forward to the next match by pressing n. Also try moving backwards through the matches by pressing N:
 ```
