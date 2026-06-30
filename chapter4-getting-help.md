@@ -7,11 +7,11 @@ In this lab, you will perform the following tasks:
 ## 4.2 Getting Help
 In this task, you will explore the how to get help. This will be a very useful thing to know how to do when you find yourself stuck or when you can't remember how a command works.
 In addition to Internet searches, the Linux Operating System provides a variety of techniques to learn more about a given command or feature. Knowing these different techniques will allow you to more easily and quickly find the answer you need.
+
 ### 4.2.1 Step 1
+
 Execute commands in the bash shell by typing the command and then pressing the Enter key. For example, type the following command to display today's date:
-```
-date
-``
+```date```
 The output should be similar to the following:
 ```
 sysadmin@localhost:~$ date                                                
